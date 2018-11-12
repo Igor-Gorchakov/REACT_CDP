@@ -1,0 +1,14 @@
+.course-item-container {
+    align-items: center;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-top: 10px;
+}
+
+.course-item-container .course-info-item-container {
+    text-align: center;
+}
+
+.course-item-container .controls-item-container {
+    text-align: center;
+}
