@@ -7,6 +7,5 @@
 # misc
 *yarn.lock
 .idea
-/public
 package-lock.json
 yarn.lock
