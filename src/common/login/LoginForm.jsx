@@ -8,7 +8,10 @@ class LoginForm extends React.Component {
     super(props);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.state = {
-      fields: {},
+      fields: {
+        login: "",
+        password: ""
+      },
       errorMessages: {}
     };
   }
