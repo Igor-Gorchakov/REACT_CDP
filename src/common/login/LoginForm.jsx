@@ -46,14 +46,14 @@ class LoginForm extends React.Component {
     if (passwordValue === "") {
       errorMessages["password"] = "Please enter the Password field";
     } else {
-      let validLoginRegexp = /^[a-zA-Z0-9]+$/i;
+      let validLoginRegexp = /(?=.*[a-zA-Z])(?=.*[0-9]).+/;
       if (!validLoginRegexp.test(passwordValue)) {
         errorMessages["password"] = "Wrong password : Field Password» should contain only Latin letters and digits";
       } 
     }
   }
 
-  handleInputChange(field, e) {         
+  handleInputChange(field, e) {
     let fields = this.state.fields;
     fields[field] = e.target.value;        
     this.setState({fields});

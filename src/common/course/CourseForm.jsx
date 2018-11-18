@@ -13,7 +13,8 @@ class CourseForm extends React.Component {
             caption: this.props.caption || "",
             description: this.props.description || "",
             date: this.props.date || "",
-            authors: this.props.authors || ""
+            authors: this.props.authors || "",
+            duration: this.props.duration || ""
         },
         errorMessages: []
     };
@@ -44,16 +45,14 @@ class CourseForm extends React.Component {
     }
     if (fields["date"] === "") {
         errorMessages.push("Date field is required");
-    } else {
-        let validDateRegexp = /^\s*(3[01]|[12][0-9]|0?[1-9])\.(1[012]|0?[1-9])\.((?:19|20)\d{2})\s*$/;
-        if (!validDateRegexp.test(fields["date"])) {
-            errorMessages.push("Type Date field in proper format : dd.mm.yyyy");
-        }
     }
     if (fields["authors"] === "") {
         errorMessages.push("Authors field is required")
     }
-    this.setState({errorMessages: errorMessages});
+    if (fields["duration"] === "") {
+        errorMessages.push("Duration field is required")
+    }
+    this.setState({errorMessages});
     if (Object.keys(errorMessages).length === 0) {
       console.log("The Course form is valid!");
     }
@@ -62,7 +61,7 @@ class CourseForm extends React.Component {
   render() {
     return (
         <div className="course-form">
-           <Modal bsSize="medium" aria-labelledby="contained-modal-title-sm" show={this.state.errorMessages.length > 0}>
+           <Modal bsSize="small" aria-labelledby="contained-modal-title-sm" show={this.state.errorMessages.length > 0}>
                 <Modal.Header>
                     <Modal.Title id="contained-modal-title">You have error messages</Modal.Title>
                 </Modal.Header>
@@ -101,7 +100,7 @@ class CourseForm extends React.Component {
                         Date
                     </Col>
                     <Col sm={4}>
-                        <FormControl type="text" placeholder="Date in dd.mm.yyyy format" onChange={this.handleInputChange.bind(this, "date")} value={this.state.fields["date"]}/>
+                        <FormControl type="date" placeholder="Date in dd.mm.yyyy format" onChange={this.handleInputChange.bind(this, "date")} value={this.state.fields["date"]}/>
                     </Col>
                 </FormGroup>
 
@@ -111,6 +110,15 @@ class CourseForm extends React.Component {
                     </Col>
                     <Col sm={4}>
                         <FormControl componentClass="textarea" placeholder="Authors" onChange={this.handleInputChange.bind(this, "authors")} value={this.state.fields["authors"]} />
+                    </Col>
+                </FormGroup>
+
+                <FormGroup controlId="duration">
+                    <Col componentClass={ControlLabel} sm={4}>
+                        Date
+                    </Col>
+                    <Col sm={4}>
+                        <FormControl type="date" placeholder="Duration in dd.mm.yyyy format" onChange={this.handleInputChange.bind(this, "duration")} value={this.state.fields["duration"]}/>
                     </Col>
                 </FormGroup>
 
@@ -126,5 +134,5 @@ class CourseForm extends React.Component {
     );
   }
 }
-  
+ 
 export default CourseForm;

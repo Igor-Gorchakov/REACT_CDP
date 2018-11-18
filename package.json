@@ -22,5 +22,17 @@
     "style-loader": "^0.16.1",
     "url-loader": "^0.5.8",
     "webpack": "^2.3.3"
-  }
+  },
+  "description": "This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).",
+  "main": "webpack.config.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Igor-Gorchakov/REACT_CDP.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Igor-Gorchakov/REACT_CDP/issues"
+  },
+  "homepage": "https://github.com/Igor-Gorchakov/REACT_CDP#readme"
 }
