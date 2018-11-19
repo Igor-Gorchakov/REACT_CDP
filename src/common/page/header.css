@@ -1,0 +1,10 @@
+/* HEADER */
+.header {
+    margin: 30px;
+    height: 50px;
+}
+.header .caption {
+    text-align: left;
+    font-family: "Comic Sans MS", cursive, sans-serif;
+    font-size: 26px;
+}
